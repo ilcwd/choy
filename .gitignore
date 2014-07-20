@@ -1,0 +1,6 @@
+.*
+*.pyc
+*.pyo
+*.log
+temp_pack
+!.gitignore
