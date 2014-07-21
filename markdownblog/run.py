@@ -12,7 +12,6 @@ from markdownblog.init import application
 # noinspection PyUnresolvedReferences
 import markdownblog.views
 
-
 def main():
     host, port = '0.0.0.0', 8080
     application.run(host, port, debug=True, use_reloader=False)

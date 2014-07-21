@@ -9,7 +9,7 @@ import flask
 
 import markdown
 
-from markdownblog.init import config
+from markdownblog.init import CONFIG
 
 
 _INDEX_FILE = 'index.md'
@@ -87,7 +87,7 @@ def get_file_content(path):
 
 
 def get_blog(path):
-    realpath = os.path.join(config['base_folder'], path)
+    realpath = os.path.join(CONFIG.BASE_FOLDER, path)
     meta, content = get_file_content(realpath)
     return meta[_MARKDOWN_TITLE], content
 
@@ -106,7 +106,7 @@ def get_menus():
     Show packages and files your repository have.
     :return: list of Menu
     """
-    base_folder = config['base_folder']
+    base_folder = CONFIG.BASE_FOLDER
 
     def search_folder(path):
         menus = []

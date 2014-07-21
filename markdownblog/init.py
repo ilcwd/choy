@@ -14,6 +14,6 @@ application = flask.Flask(
 
 logger = logging.getLogger(__name__)
 
-config = {
-    'base_folder': '/home/ilcwd/Documents/markdown',
-}
+
+class CONFIG(object):
+    BASE_FOLDER = ''
