@@ -10,8 +10,11 @@
     <div class="container-fluid">
       <div class="row">
         <div class="sidebar">
-            {% include 'menu.html' %}
+            <!--<div class="well">-->
+                {% include 'menu.html' %}
+            <!--</div>-->
         </div>
+
         <div class="main markdown-body">
             {{ content|safe }}
         </div>

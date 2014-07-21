@@ -15,5 +15,5 @@ application = flask.Flask(
 logger = logging.getLogger(__name__)
 
 config = {
-    'base_folder': '/home/ilcwd/Dropbox/kuaipan',
+    'base_folder': '/home/ilcwd/Documents/markdown',
 }

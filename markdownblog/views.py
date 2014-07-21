@@ -7,10 +7,9 @@ import flask
 from markdownblog import init, misc
 
 
-@init.application.route('/a/<path>', methods=['GET'])
+@init.application.route('/a/<path:path>', methods=['GET'])
 def show_article(path):
     menus = misc.get_menus()
-
     title, content = misc.get_blog(path)
 
     context = dict(
