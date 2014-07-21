@@ -9,6 +9,7 @@ reload(sys).setdefaultencoding('utf8')
 from markdownblog.init import application
 
 # import module views to initialize view functions
+# noinspection PyUnresolvedReferences
 import markdownblog.views
 
 
