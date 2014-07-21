@@ -1,0 +1,28 @@
+
+.admonition {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+.admonition-title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+.admonition p:last-child {
+  margin-bottom: 0;
+}
+.admonition code {
+  border-radius: 3px;
+}
+.admonition+.admonition {
+  margin-top: -5px;
+}
+.note {
+  border-left-color: #f0ad4e;
+}
+.note p:first-child {
+  color: #f0ad4e;
+}

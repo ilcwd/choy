@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-ch">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>database-design-guide.md</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/markdown.css" type="text/css">
+        <link rel="stylesheet" href="css/sidebar.css" type="text/css">
+        <link rel="stylesheet" href="css/admonition.css" type="text/css">
+
+    </head>
+
+    <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar"><li><a href="#">├──&nbsp;css</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;admonition.css</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;bootstrap-theme.css</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;bootstrap-theme.css.map</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;bootstrap-theme.min.css</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;bootstrap.css</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;bootstrap.css.map</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;bootstrap.min.css</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;markdown.css</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;└──&nbsp;sidebar.css</a></li><li><a href="#">├──&nbsp;database-design-guide.md</a></li><li><a href="#">├──&nbsp;fonts</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;glyphicons-halflings-regular.eot</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;glyphicons-halflings-regular.svg</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;glyphicons-halflings-regular.ttf</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;└──&nbsp;glyphicons-halflings-regular.woff</a></li><li><a href="#">├──&nbsp;js</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;bootstrap.js</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;└──&nbsp;bootstrap.min.js</a></li><li><a href="#">└──&nbsp;out.html</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">README.md</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">ChangeLog</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">VERSION</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">MANIFEST.in</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">├──&nbsp;COMMIT_EDITMSG</a></li><li><a href="#">├──&nbsp;HEAD</a></li><li><a href="#">├──&nbsp;branches</a></li><li><a href="#">├──&nbsp;config</a></li><li><a href="#">├──&nbsp;description</a></li><li><a href="#">├──&nbsp;hooks</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;applypatch-msg.sample</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;commit-msg.sample</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;post-update.sample</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;pre-applypatch.sample</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;pre-commit.sample</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;pre-rebase.sample</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;prepare-commit-msg.sample</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;└──&nbsp;update.sample</a></li><li><a href="#">├──&nbsp;index</a></li><li><a href="#">├──&nbsp;info</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;└──&nbsp;exclude</a></li><li><a href="#">├──&nbsp;logs</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;HEAD</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;└──&nbsp;refs</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;heads</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;master</a></li><li><a href="#">├──&nbsp;objects</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;04</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;53ac465e33d31d5cc14c051e497b387a767487</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;3b</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;1ffdee83738db353b785ddd58388c7ec20b3b3</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;3f</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;82c05cf8b404bb1dad870eefc775161fd66c42</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;40</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;4cfab0feaebdecc5e059d011c47b22b9f66213</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;49</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;5b0bec3b6bd2827384fd652029708f51617cf2</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;4f</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;3ce1ed6ec485b0e24391f12afce880027e5b32</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;56</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;09dbd956a24f211cf777112095443757d301ed</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;5f</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;9d93f383c1779a7aa4c040960a564e2be2d0c4</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;6c</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;6aa7cb0918dc7a1cfa3635fb7f8792ac4cb218</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;80</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;c05ea407725e81b51c3be7edfe1d4b4626d8f4</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;a1</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;01f1205d84cd85ac3322814c09c4bbc7c2acd1</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;a9</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;839e9a4057f99a120a5df30f060af909606046</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;├──&nbsp;info</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;└──&nbsp;pack</a></li><li><a href="#">└──&nbsp;refs</a></li><li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;heads</a></li><li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;master</a></li><li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;tags</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">├──&nbsp;.name</a></li><li><a href="#">├──&nbsp;encodings.xml</a></li><li><a href="#">├──&nbsp;mdblog.iml</a></li><li><a href="#">├──&nbsp;misc.xml</a></li><li><a href="#">├──&nbsp;modules.xml</a></li><li><a href="#">├──&nbsp;scopes</a></li><li><a href="#">│&nbsp;&nbsp;&nbsp;└──&nbsp;scope_settings.xml</a></li><li><a href="#">├──&nbsp;vcs.xml</a></li><li><a href="#">└──&nbsp;workspace.xml</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">requirements.txt</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">wsgiapp.py</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">setup.py</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">.gitignore</a></li></ul><ul class="nav nav-sidebar"><li><a href="#">├──&nbsp;__init__.py</a></li><li><a href="#">├──&nbsp;main.py</a></li><li><a href="#">└──&nbsp;templates</a></li><li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;base.template</a></li></ul>
+        </div>
+        <div class="main">
+            <div class="toc">
+<ul>
+<li><a href="#_1">数据库开发指南</a><ul>
+<li><a href="#innodb">存储引擎首选 InnoDB</a></li>
+<li><a href="#utf8">字符编码首选 UTF8</a></li>
+<li><a href="#_2">主键选择</a></li>
+<li><a href="#_3">索引选择</a></li>
+<li><a href="#_4">日期类型选择</a></li>
+<li><a href="#charvarchartext">CHAR/VARCHAR/TEXT 的对比是大小写不敏感的</a></li>
+<li><a href="#_5">查询</a><ul>
+<li><a href="#_6">使用索引</a></li>
+</ul>
+</li>
+<li><a href="#_7">命名规则</a><ul>
+<li><a href="#_8">数据库名</a></li>
+<li><a href="#_9">表名</a></li>
+<li><a href="#sql">SQL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="_1">数据库开发指南</h1>
+<p>本指南主要针对 MySQL，其他类型RDB可能有小许差异；</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>hello</p>
+<p>hello2</p>
+<pre><code>python 1
+</code></pre>
+</div>
+<h2 id="innodb">存储引擎首选 InnoDB</h2>
+<p>InnoDB所有情况下的性能相当或者远超越和MyISAM，因此作为首选引擎。</p>
+<p>其他引擎例如Memory也不推荐使用。</p>
+<h2 id="utf8">字符编码首选 UTF8</h2>
+<p>创建数据库的时候建议：</p>
+<pre><code>CREATE DATABASE `MYDB` DEFAULT CHARACTER SET UTF8;
+</code></pre>
+<p>外部链接：</p>
+<ul>
+<li><a href="http://dev.mysql.com/doc/refman/5.5/en/charset-unicode-sets.html">MySQL - Unicode Character Sets</a></li>
+<li><a href="http://dev.mysql.com/doc/refman/5.5/en/charset-connection.html">MySQL - Connection Character Sets and Collations</a></li>
+</ul>
+<h2 id="_2">主键选择</h2>
+<p>主键建议为整数，自增型，InnoDB；</p>
+<p>如果表记录很少被删除，可以使用 <code>INT</code>，否则为 <code>BIGINT</code>；</p>
+<p>不建议使用UUID等比较长的字符串作为主键，原因如下：</p>
+<ul>
+<li>主键为随机的时候，InnoDB为随机写，速度较慢；</li>
+<li>InnoDB的索引会包含主键，主键比较大的时候索引也会相应增大，浪费空间；</li>
+</ul>
+<p>如果有使用长字符串，例如SHA或者UUID作为主键需求，可以使用唯一索引，然后主键使用自增的INT；</p>
+<h2 id="_3">索引选择</h2>
+<p>实测BTree（默认）性能和Hash差不多，并且有范围查找功能，建议选用；</p>
+<p>若有排序的查询需求，可考虑索引；</p>
+<h2 id="_4">日期类型选择</h2>
+<p>内部生成的，不能被外部修改的时间，例如创建时间，修改时间这种，建议用 <code>TIMESTAMP</code>；</p>
+<p>外部可修改的时间，用 <code>DATETIME</code> ，建议其值为UTC时间；</p>
+<h2 id="charvarchartext">CHAR/VARCHAR/TEXT 的对比是大小写不敏感的</h2>
+<p>在要求大小写敏感的场合不建议用这几种类型，用 BINARY/VARBINARY/BLOB代替；</p>
+<h2 id="_5">查询</h2>
+<h3 id="_6">使用索引</h3>
+<p>除非表很小，否则任何情况下查询都要匹配索引。</p>
+<p>要注意索引命中数和结果数的比例不能太高，否则考虑再增加索引，例如下面情况：</p>
+<p>查询用户ID为 123 的人的文件中，大小超过 1024bytes 的文件名：</p>
+<pre><code>SELECT `name` FROM `userfile` WHERE `userid`=123 and `size`&gt;1024;
+</code></pre>
+<p>如果表 <code>userfile</code> 中普遍用户的文件都不多，可以考虑只用 userid 的索引，
+但是如果有些用户可能有10万以上文件，那么这样一条查询，就会对数据库产生10万次随机读，
+这时候可以考虑增加 size 的索引；另外，如果大小超过这个值的文件也很多，那么就会一次过返回很多数据，这对数据库性能有很大影响，建议进行分页处理。</p>
+<pre><code>#TODO
+</code></pre>
+<p>使用MySQL的 <code>EXPLAIN</code> 命令可以查看你的SQL是否使用索引。</p>
+<ul>
+<li>使用游标分页</li>
+<li>使用LIMIT</li>
+<li>使用escape</li>
+</ul>
+<h2 id="_7">命名规则</h2>
+<h3 id="_8">数据库名</h3>
+<p>字母和数字的组合，可以包含下划线，建议使用驼峰式，首字母大写，如 <code>BookStore</code> 。</p>
+<h3 id="_9">表名</h3>
+<p>字母和数字的组合，可以包含下划线，建议全小写，如 <code>book</code> 。</p>
+<h3 id="sql">SQL</h3>
+<blockquote>
+<p>SQL一般情况下建议用 ORM 生成，如果要手写，建议遵从下面规则</p>
+</blockquote>
+<p>SQL关键字用全大小，表名，列表建议加上反引号 <code>`</code>；</p>
+<p>如果确认查询结果只有一条，例如主键，唯一索引查询，可以加上 <code>LIMIT 1</code>，
+查询时不建议使用 <code>SELECT *</code> </p>
+<p>建议：</p>
+<pre><code>SELECT `bid`,`name` FROM `book` WHERE `bid`=1 LIMIT 1;
+</code></pre>
+<p>不推荐：</p>
+<pre><code>SELECT * FROM `book` WHERE `bid`=1;
+select * from `book`;
+</code></pre>
+        </div>
+      </div>
+    </div>
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Custom JavaScript for the Menu Toggle -->
+        <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("active");
+        });
+        </script>
+    </body>
+</html>

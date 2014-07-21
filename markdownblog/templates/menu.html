@@ -1,0 +1,62 @@
+  <ul class="nav nav-sidebar">
+    <li class="active"><a href="#">Overview</a></li>
+    <li><a href="#">Reports</a></li>
+    <li><a href="#">├─&nbsp;Analytics</a></li>
+    <li><a href="#">└─&nbsp;Analytics</a></li>
+    <li><a href="#">Export</a></li>
+  </ul>
+  <ul class="nav nav-sidebar">
+    <li><a href="">Nav item</a></li>
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Dropdown <span class="caret"></span>
+    </a>
+       <ul class="dropdown-menu" role="menu">
+      {% for menu in menus %}
+        <li><a href="{{ menu.url|e }}">{{ menu.name|e }}</a></li>
+      {% endfor %}
+      </ul>
+     </li>
+
+        <li><a href="">一条导航栏</a></li>
+    <li><a href="">另外一条导航栏</a></li>
+  </ul>
+<ul class="nav">
+
+
+{% for menu in menus recursive %}
+<li>
+    {% if menu.url %}
+    <label class="tree-toggle nav-header">{{ menu.name}}</label>
+    <a class="treeroot" href="#" data-toggle="tooltip" title="Tooltip is missing!">首页</a>
+    {% endif %}
+    {% if menu.children %}
+    <ul class="nav tree">
+      {{ loop(menu.children) }}
+    </ul>
+    {% endif %}
+</li>
+{% endfor %}
+
+
+    <ul class="nav nav-list">
+                <li><label class="tree-toggle nav-header">Bootstrap</label>
+                    <ul class="nav nav-list tree">
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><label class="tree-toggle nav-header">Buttons</label>
+                            <ul class="nav nav-list tree">
+                                <li><a href="#">Colors</a></li>
+                                <li><a href="#">Sizes</a></li>
+                                <li><label class="tree-toggle nav-header">Forms</label>
+                                    <ul class="nav nav-list tree">
+                                        <li><a href="#">Horizontal</a></li>
+                                        <li><a href="#">Vertical</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+       </ul>
