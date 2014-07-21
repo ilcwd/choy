@@ -11,8 +11,8 @@ from setuptools import setup, find_packages
 
 _CWD = os.path.dirname(__file__)
 
-NAME = 'markdown-blog'
-DESCRIPTION = 'Blog system using Markdown.'
+NAME = 'choy'
+DESCRIPTION = 'Wiki system using Markdown.'
 AUTHOR = 'ilcwd'
 EMAIL = 'ilcwd23@gmail.com'
 INSTALL_REQUIRES = [i for i in open(os.path.join(_CWD, 'requirements.txt')).readlines()

@@ -4,7 +4,7 @@
 Author: ilcwd
 """
 import flask
-from markdownblog import init, misc
+from choy import init, misc
 
 
 @init.application.route('/')

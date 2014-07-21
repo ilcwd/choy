@@ -9,7 +9,7 @@ import flask
 
 import markdown
 
-from markdownblog.init import CONFIG
+from choy.init import CONFIG
 
 
 _INDEX_FILE = 'index.md'

@@ -5,14 +5,21 @@ Author: ilcwd
 """
 import sys
 reload(sys).setdefaultencoding('utf8')
+import os
 
-from markdownblog.init import application
+from choy.init import application, CONFIG
 
 # import module views to initialize view functions
 # noinspection PyUnresolvedReferences
-import markdownblog.views
+import choy.views
+
+
+# get your markdown repository from env
+CONFIG.BASE_FOLDER = os.getenv("CHOY_HOME")
+
 
 def main():
+
     host, port = '0.0.0.0', 8080
     application.run(host, port, debug=True, use_reloader=False)
 

@@ -1,11 +1,24 @@
-快盘 OpenAPI 鉴权服务
-=====================
-快盘 OpenAPI 鉴权服务。
+Choy
+====
+Choy，可以把markdown文件一键生成wiki。
 
-Functions
----------
+wiki的层级组织和markdown目录的文件夹组织一样。
 
-* 获取应用信息；
-* URL鉴权；
-* 获取token密钥；
 
+TODO List
+----
+* 整合 Git，可以浏览wiki文档的版本历史；
+* etc.
+
+Support Syntax
+----
+
+* Markdown基本语法
+* [TOC] - Table of Content
+* Meta - 文件前几行可以使用 `Key: Value` 语法
+* 目录会自动寻找 `index.md` 并加载作为自己的内容
+
+Run
+----
+
+    CHOY_HOME=/path/to/your/repo && python -m "choy.run"
