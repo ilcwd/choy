@@ -1,9 +1,12 @@
 
+2014-07-22 1.3
+	* new: rendering favicon from root
+	* fix: href value is not encoded
+	* new: read h1 from markdown file
+
 2014-07-22 1.2.0
 	* new: new admonition - note, warn, danger
 	* new: parsing options from command line instead of env
-
-
 
 2014-07-22 1.1.4
 	* new: include static files in egg and site-packages
