@@ -8,6 +8,7 @@ import logging
 
 import flask
 
+_current = os.path.dirname(os.path.realpath(__file__))
 
 class CONFIG(object):
     """
@@ -19,7 +20,7 @@ class CONFIG(object):
     # template folder is your templates for rendering,
     # MUST include file named `base.html`, the template it read;
     # Can include folder named `static`, if your want to serve static files.
-    TEMPLATE_FOLDER = os.getenv("CHOY_TEMPLATE") or 'templates/default'
+    TEMPLATE_FOLDER = os.getenv("CHOY_TEMPLATE") or os.path.join(_current, 'templates', 'default')
 
 
 # Flask application

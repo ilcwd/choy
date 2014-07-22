@@ -1,3 +1,6 @@
+2014-07-22 1.1.4
+	* new: include static files in egg and site-packages
+
 2014-07-22 1.0
 	* new: runable version
 

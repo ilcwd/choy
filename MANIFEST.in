@@ -1,1 +1,3 @@
-include README.md VERSION requirements.txt
+include README.md VERSION requirements.txt 
+recursive-include choy/templates/default *
+recursive-include choy/templates/default/static/css *
