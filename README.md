@@ -1,6 +1,6 @@
 Choy
 ====
-Choy，可以把markdown文件一键生成wiki。
+Choy可以把markdown文件一键生成wiki。
 
 wiki的层级组织和markdown目录的文件夹组织一样。
 
@@ -8,6 +8,8 @@ wiki的层级组织和markdown目录的文件夹组织一样。
 TODO List
 ----
 * 整合 Git，可以浏览wiki文档的版本历史；
+* 文件和目录cache，加快wiki加载；
+* 支持自定义网页模板；
 * etc.
 
 Support Syntax
@@ -21,4 +23,4 @@ Support Syntax
 Run
 ----
 
-    CHOY_HOME=/path/to/your/repo && python -m "choy.run"
+    export CHOY_HOME=/path/to/your/repo && python -m "choy.run"

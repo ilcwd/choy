@@ -21,6 +21,7 @@ CONFIG.BASE_FOLDER = os.getenv("CHOY_HOME")
 def main():
 
     host, port = '0.0.0.0', 8080
+    print "[INFO]Loading markdown files from:", CONFIG.BASE_FOLDER
     application.run(host, port, debug=True, use_reloader=False)
 
 
