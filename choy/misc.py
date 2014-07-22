@@ -29,7 +29,6 @@ def _read_html_h1(html):
 
     m = _RE_MATCH_HTML_H1.match(html)
     if m:
-        print m.groupdict()
         return m.groupdict()['title']
 
 
