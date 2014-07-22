@@ -87,6 +87,11 @@ def get_file_content(path):
 
 
 def get_blog(path):
+    """
+    get title and html content of file
+    :param path: path to your file system
+    :return: (title, html)
+    """
     realpath = os.path.join(CONFIG.BASE_FOLDER, path)
     meta, content = get_file_content(realpath)
     return meta[_MARKDOWN_TITLE], content
