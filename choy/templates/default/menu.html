@@ -5,8 +5,8 @@
         <div class="treeitem">
         {% if menu.is_folder %}
             {% if menu.url %}
-            <span class="tree-toggle nav-header glyphicon glyphicon-folder-open blue"></span>
-            <a href="{{ '/a'+menu.url }}" data-toggle="tooltip" title="Tooltip is missing!">{{ menu.title }}</a>
+            <span class="tree-toggle nav-header glyphicon glyphicon-folder-open"></span>
+            <a href="{{ '/a'+menu.url|urlencode }}">{{ menu.title }}</a>
             {% endif %}
 
             {% if menu.children %}
@@ -15,8 +15,8 @@
             </ul>
             {% endif %}
         {% else %}
-            <span class="glyphicon glyphicon-file blue"></span>
-            <a href="{{ '/a'+menu.url }}" data-toggle="tooltip" title="Tooltip is missing!">{{ menu.title }}</a>
+            <span class="glyphicon glyphicon-file"></span>
+            <a href="{{ '/a'+menu.url|urlencode }}">{{ menu.title }}</a>
         {% endif %}
         </div>
     </li>
