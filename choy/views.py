@@ -27,6 +27,11 @@ def show_article(path=''):
 def ping():
     return 'pong'
 
+@init.application.route('/favicon.ico')
+def favicon():
+    basefolder = init.CONFIG.BASE_FOLDER
+
+    return flask.send_from_directory(basefolder, 'favicon.ico')
 
 @init.application.errorhandler(404)
 def error_404(e):
