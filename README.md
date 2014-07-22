@@ -23,4 +23,4 @@ Support Syntax
 Run
 ----
 
-    export CHOY_HOME=/path/to/your/repo && python -m "choy.run"
+    python -mchoy.run

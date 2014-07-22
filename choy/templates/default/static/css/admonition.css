@@ -1,11 +1,20 @@
 
 .admonition {
-  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 20px 0;
   border: 1px solid #eee;
   border-left-width: 5px;
   border-radius: 3px;
 }
+.admonition-title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
 .admonition-title {
   margin-top: 0;
   margin-bottom: 5px;
@@ -20,9 +29,25 @@
 .admonition+.admonition {
   margin-top: -5px;
 }
-.note {
+
+/* admonition types */
+.warn {
   border-left-color: #f0ad4e;
 }
-.note p:first-child {
+.warn p:first-child {
   color: #f0ad4e;
+}
+
+.note {
+  border-left-color: green;
+}
+.note p:first-child {
+  color: green;
+}
+
+.danger {
+  border-left-color: red;
+}
+.danger p:first-child {
+  color: red;
 }

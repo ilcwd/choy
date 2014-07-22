@@ -15,7 +15,7 @@ import choy.views
 
 def main():
 
-    host, port = '0.0.0.0', 8080
+    host, port = CONFIG.HOST, CONFIG.PORT
     print "[INFO]Loading markdown files from:", CONFIG.BASE_FOLDER
     application.run(host, port, debug=True, use_reloader=False)
 
